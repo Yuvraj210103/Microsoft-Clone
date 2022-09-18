@@ -14,17 +14,28 @@
         .bg-gray-100 {
             display: none;
         }
+        @media (min-width: 768px) {
+        .disc{
+            width: 46rem;
+        }
+    }
+    @media (min-width: 1024px) {
+        .disc{
+            width:19rem;
+        }
+    }
     </style>
 </head>
 
 <body>
     <nav class="flex py-4 bg-white shadow-sm">
-        <div class="mx-3 -mt-1 cursor-pointer absolute sm:hidden" onclick="listHide()" id="hamburger">
+        <div class="mx-3 -mt-1 cursor-pointer absolute md:hidden lg:hidden" onclick="listHide()" id="hamburger">
             <box-icon name='menu'></box-icon>
         </div>
-        <i class="fa- fa-solid fa-magnifying-glass mx-14 sm:hidden"></i>
-        <img class=" mx-auto w-1/4 sm:ml-20" src="img/ms-logo.png" alt="logo" srcset="" onclick="reload()">
-        <div class="absolute ml-52 mt-1 hidden sm:inline-flex">
+        <i class="fa- fa-solid fa-magnifying-glass mx-14 md:hidden lg:hidden"></i>
+        <img class=" mx-auto w-1/4 md:w-1/12 md:ml-8 lg:ml-20" src="img/ms-logo.png" alt="logo" srcset=""
+            onclick="reload()">
+        <div class="absolute lg:ml-52 md:ml-36 mt-1 hidden md:inline-flex lg:inline-flex">
             <li class="list-none cursor-pointer mx-3 text-sm hover:underline">Microsoft 365</li>
             <li class="list-none cursor-pointer mx-3 text-sm hover:underline">Teams</li>
             <li class="list-none cursor-pointer mx-3 text-sm hover:underline">Windows</li>
@@ -33,12 +44,12 @@
             <li class="list-none cursor-pointer mx-3 text-sm hover:underline">Support</li>
         </div>
 
-        <div class="mr-6 sm:mr-14">
-            <li class=" mx-3 hidden sm:inline text-sm cursor-pointer hover:underline">All Microsoft</li>
-            <i class="fa-solid fa-magnifying-glass mx-3 hidden sm:inline"></i>
-            
-            <i class="fa-solid fa-cart-shopping mx-8 sm:mx-3"></i>
-            <i class="fa-solid fa-user odd:mx-8 sm:mx-3 "></i>
+        <div class="mr-6 lg:mr-14">
+            <li class=" mx-3 hidden md:inline lg:inline text-sm cursor-pointer hover:underline">All Microsoft</li>
+            <i class="fa-solid fa-magnifying-glass mx-3 md:mx-1 hidden md:inline lg:inline"></i>
+
+            <i class="fa-solid fa-cart-shopping mx-8 lg:mx-3 md:mx-4"></i>
+            <i class="fa-solid fa-user odd:mx-8 lg:mx-3 "></i>
         </div>
     </nav>
     <div class="bg-gray-100 " id="nav-list" onclick="closeMenu()">
@@ -70,14 +81,16 @@
         <hr>
     </div>
     <!--For mobile-->
-    <div class="home sm:hidden">
+    <div class="home lg:hidden">
         <div>
             <img data-src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Hero-M365-Screenplates-Update-Excel:VP1-539x440"
-                class="card-img w-100 blur-up lazypreload lazyloaded x-hidden-focus"
+                class="card-img w-100 blur-up lazypreload lazyloaded x-hidden-focus md:hidden"
                 alt="Screens and app icons for Office apps that are part of Microsoft 365"
                 src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Hero-M365-Screenplates-Update-Excel:VP1-539x440">
+            <img src=" https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Hero-M365-Screenplates-Update-Excel:VP3-1083x600"
+                alt="" srcset="" class="hidden md:block z-0">
         </div>
-        <div class="p-4 shadow-md">
+        <div class="md:p-10 z-10 md:-mt-10 md:relative p-4 shadow-md md:bg-white md:mx-2">
             <h1 class="font-bold text-xl">
                 Microsoft 365
             </h1>
@@ -92,7 +105,7 @@
         </div>
     </div>
     <!--For PC-->
-    <div class="hidden min-h-screen  sm:block " style="background:url(img/home.jpg);background-position: -50px;">
+    <div class="hidden min-h-screen  lg:block " style="background:url(img/home.jpg);background-position: -50px;">
         <div class="p-4 absolute mt-48 ml-28">
             <h1 class="font-semibold text-3xl">
                 Microsoft 365
@@ -116,11 +129,13 @@
             <i class="fa-2x fa-solid fa-chevron-right my-5 mx-6"></i>
         </div>
     </div>
-    <div class="text-center mt-6 sm:flex sm:justify-center">
-        <div class="flex flex-col sm:mx-4"> <i class="fa-3x fa-brands fa-microsoft my-4"></i>
-        <h1 class="text-blue-600 underline cursor-pointer font-semibold">Choose your Microsoft 365</h1></div>
-        <div class="flex flex-col sm:mx-4"><i class="fa-3x fa-solid fa-laptop my-4 "></i>
-        <h1 class="text-blue-600 cursor-pointer underline font-semibold">Explore Surface devices</h1></div>
+    <div class="text-center mt-6 md:flex md:justify-center">
+        <div class="flex flex-col md:mx-4"> <i class="fa-3x fa-brands fa-microsoft my-4"></i>
+            <h1 class="text-blue-600 underline cursor-pointer font-semibold">Choose your Microsoft 365</h1>
+        </div>
+        <div class="flex flex-col md:mx-4"><i class="fa-3x fa-solid fa-laptop my-4 "></i>
+            <h1 class="text-blue-600 cursor-pointer underline font-semibold">Explore Surface devices</h1>
+        </div>
         <div class="flex justify-center">
             <div class="flex flex-col mx-7"><i class="fa-3x fa-brands fa-xbox my-4 "></i>
                 <h1 class="text-blue-600 underline cursor-pointer font-semibold">Buy Xbox games</h1>
@@ -131,183 +146,218 @@
         </div>
     </div>
 
-    <div class="mx-3 sm:flex sm:mx-12 sm:mt-6" id="products">
-        
-        <div class="disc  mt-11 sm:mx-3">
-            <img class="sm:h-40 sm:w-80" src="img/content1.jpg" alt="Loading">
-          <h1 class="bg-yellow-500 mt-4 text-center w-14 font-semibold">New</h1> 
-          <h1 class="mt-2 font-bold text-xl">Surface Laptop Go 2</h1>
-          <p class="mt-2">
-            A sleek laptop with a 12.4-inch touchscreen, great typing experience and improved HD camera.
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#">Learn more <i class="f fa-solid fa-chevron-right "></i></a>
+    <div class="mx-3 lg:flex lg:mx-12 md:mx-5 lg:mt-6" id="products">
+        <div class="md:flex ">
+            <div class="disc mt-11 ">
+                <img class="lg:h-40 lg:w-80 md:h-64 md:min-w-full " src="img/content1.jpg" alt="Loading">
+                <h1 class="bg-yellow-500 mt-4 text-center w-14 font-semibold">New</h1>
+                <h1 class="mt-2 font-bold text-xl">Surface Laptop Go 2</h1>
+                <p class="mt-2">
+                    A sleek laptop with a 12.4-inch touchscreen, great typing experience and improved HD camera.
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#">Learn more <i
+                        class="f fa-solid fa-chevron-right "></i></a>
+            </div>
+            <div class="disc mt-11 md:ml-6 lg:ml-4 ">
+                <img class="md:min-w-full lg:h-40 lg:w-72 md:h-64 " src="img/content2.avif" alt="Loading">
+
+                <h1 class="mt-12 font-bold text-xl">Surface Laptop 4</h1>
+                <p class="mt-2 md:object-fill">
+                    Do it all with a perfect balance of sleek, ultra-thin design, multitasking speed and improved
+                    performance.
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#">Shop now <i
+                        class="f fa-solid fa-chevron-right "></i></a>
+            </div>
         </div>
-        <div class="disc mt-11 sm:mx-3">
-            <img class=" sm:h-40 sm:w-72 " src="img/content2.avif" alt="Loading">
-           
-          <h1 class="mt-12 font-bold text-xl">Surface Laptop 4</h1>
-          <p class="mt-2">
-            Do it all with a perfect balance of sleek, ultra-thin design, multitasking speed and improved performance.
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#">Shop now <i class="f fa-solid fa-chevron-right "></i></a>
-        </div>
-        <div class="disc mt-11 sm:mx-3">
-            <img class=" sm:h-40 sm:w-72 " src="img/content3.avif" alt="Loading">
-          
-          <h1 class="mt-12 font-bold text-xl">PC Game Pass</h1>
-          <p class="mt-2">
-            Unlock 100+ great games and EA Play, plus get your first month for ₹50. Offer available to new subscribers only.
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#"> Join now <i class="f fa-solid fa-chevron-right "></i></a>
-        </div>
-        <div class="disc mt-11 sm:mx-3">
-            <img class=" sm:h-40 sm:w-72 " src="img/content4.avif" alt="Loading">
-          
-          <h1 class="mt-12 font-bold text-xl">Designed for life today – and tomorrow</h1>
-          <p class="mt-2">
-            The next-generation of games. Your goals. Friends and family. Windows 11  was made to bring you closer to  everything you love.
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#"> See if your PC is ready<i class="f fa-solid fa-chevron-right "></i></a>
+        <div class="md:flex ">
+            <div class="disc mt-11 lg:ml-4">
+                <img class=" lg:h-40 lg:w-72 md:h-64  md:min-w-full " src="img/content3.avif" alt="Loading">
+
+                <h1 class="mt-12 font-bold text-xl">PC Game Pass</h1>
+                <p class="mt-2">
+                    Unlock 100+ great games and EA Play, plus get your first month for ₹50. Offer available to new
+                    subscribers only.
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#"> Join now <i
+                        class="f fa-solid fa-chevron-right "></i></a>
+            </div>
+            <div class="disc mt-11 md:ml-6 lg:ml-4">
+                <img class=" lg:h-40 lg:w-72 md:h-64  md:min-w-full" src="img/content4.avif" alt="Loading">
+
+                <h1 class="mt-12 font-bold text-xl">Designed for life today – and tomorrow</h1>
+                <p class="mt-2">
+                    The next-generation of games. Your goals. Friends and family. Windows 11 was made to bring you
+                    closer to everything you love.
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#"> See if your PC is ready<i
+                        class="f fa-solid fa-chevron-right "></i></a>
+            </div>
         </div>
     </div>
 
-    <div class="sm:relative  home-logo mt-12 sm:mt-28  ">
-        <img class="sm:hidden" src="img/logo-home-mb.avif" alt="">
-        <img class="hidden sm:block mx-14" src="img/logo-home.avif" alt="">
-        <div class="sm:absolute mt-10 mx-3 sm:w-96 sm:bg-white sm:shadow-md z-10 sm:top-20 sm:left-20 sm:p-11">
+    <div class="lg:relative  home-logo mt-12 md:mt-28  ">
+        <img class="md:hidden " src="img/logo-home-mb.avif" alt="">
+        <img class="hidden md:block lg:mx-14 md:mx-1" src="img/logo-home.avif" alt="">
+        <div
+            class="lg:absolute md:p-11 md:relative mt-10 mx-3 lg:w-96 md:bg-white md:shadow-md z-10 lg:top-20 md:-mt-10 lg:left-20 lg:p-11">
             <h1 class="text-2xl font-semibold">Microsoft Edge</h1>
-            <p class="mt-2">World-class performance with more privacy, more productivity and more value while you browse</p>
+            <p class="mt-2">World-class performance with more privacy, more productivity and more value while you browse
+            </p>
             <button class="mt-4 bg-blue-600 text-white font-semibold py-2 px-3">Download now</button>
         </div>
     </div>
 
-    <section class="mt-20 mx-3 sm:mx-14">
+    <section class="mt-20 mx-3 lg:mx-14">
         <h1 class="text-2xl my-2 font-semibold ">For Business</h1>
-        <div class="cont sm:flex ">
-        <div class="disc  sm:mt-2 sm:w-1/2 sm:box-border">
-        <img class="sm:h-40 sm:w-80" src="img/content5.webp" alt="">
-       
-        <h1 class="bg-yellow-500 mt-4 text-center w-14 font-semibold">New</h1>
-        <h1 class="mt-2 font-semibold text-2xl">Surface Laptop Go 2 for Business</h1>
-          <p class="mt-2">
-              A sleek, portable laptop featuring a great typing experience, Windows 11 Pro and professional-grade performance.
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#">Learn more <i class="f fa-solid fa-chevron-right "></i></a>
+        <div class="cont lg:flex ">
+           
+            <div class="md:flex">
+            <div class="disc  lg:mt-2   ">
+                <img class="lg:h-40 lg:w-80 md:h-60  md:min-w-full" src="img/content5.webp" alt="">
 
-    </div>
-    <div class="disc sm:mx-2 mt-12 sm:mt-2">
-        <img class="sm:h-40 sm:w-80" src="img/content6.webp" alt="">
-        
-        <h1 class="mt-12 font-semibold text-2xl">Get Microsoft Teams for free</h1>
-          <p class="mt-2">
-            Online meetings, chat and shared cloud storage – all in one place
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#">Sign up for free <i class="f fa-solid fa-chevron-right "></i></a>
+                <h1 class="bg-yellow-500 mt-4 text-center w-14 font-semibold">New</h1>
+                <h1 class="mt-2 font-semibold text-2xl">Surface Laptop Go 2 for Business</h1>
+                <p class="mt-2">
+                    A sleek, portable laptop featuring a great typing experience, Windows 11 Pro and professional-grade
+                    performance.
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#">Learn more <i
+                        class="f fa-solid fa-chevron-right "></i></a>
 
-    </div>
-    <div class="disc sm:mx-2 mt-12 sm:mt-2">
-        <img class="sm:h-40 sm:w-80" src="img/content7.webp" alt="">
+            </div>
+            <div class="disc  lg:ml-4  mt-12 md:mt-0 md:ml-6 lg:mt-2">
+                <img class="lg:h-40 lg:w-80 md:h-60 md:min-w-full" src="img/content6.webp" alt="">
 
-        <h1 class="mt-13 sm:mt-11 font-semibold text-2xl">Microsoft 365 for business</h1>
-          <p class="mt-2 sm:mt-8">
-            Stay a step ahead with powerful apps for productivity, connection and security.
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#">Shop now<i class="f fa-solid fa-chevron-right "></i></a>
+                <h1 class="mt-12 font-semibold text-2xl">Get Microsoft Teams for free</h1>
+                <p class="mt-2">
+                    Online meetings, chat and shared cloud storage – all in one place
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#">Sign up for free <i
+                        class="f fa-solid fa-chevron-right "></i></a>
 
-    </div>
-    <div class="disc sm:mx-2 mt-12 sm:mt-2">
-        <img class="sm:h-40 sm:w-80" src="img/content8.avif" alt="">
-       
-        <h1 class="mt-12 font-semibold text-2xl">Windows 11 for business is here</h1>
-          <p class="mt-2">
-            Designed for hybrid work. Powerful for employees. Consistent for IT. Secure for all.
-          </p>
-          <a class="text-blue-600 block mt-4 font-semibold" href="#">Learn more <i class="f fa-solid fa-chevron-right "></i></a>
+            </div>
+           </div>
 
-    </div>
-</div>
+           <div class="md:flex">
+            <div class="disc   lg:ml-4 mt-12 lg:mt-2">
+                <img class="lg:h-40 lg:w-80 md:h-60  md:min-w-full" src="img/content7.webp" alt="">
 
-<h1 class="mt-16">Follow Microsoft <i class="cursor-pointer fa-xl fa-brands fa-facebook-f mx-2 ml-5"></i> <i class="cursor-pointer fa-xl fa-brands fa-twitter mx-2"></i> <i class="cursor-pointer fa-xl fa-brands fa-youtube mx-2"></i></h1> 
-<div class="text-center sm:text-right mt-4">
-<button class="bg-gray-200 text-center min-w-full sm:min-w-0 sm:ml-auto sm:p-2 p-2 font-semibold cursor-pointer hover:bg-white shadow-md transition-all" onclick="scrollBack()"> <i class="fa-solid fa-arrow-up mr-1"></i> Back to top</button>
-</div>
+                <h1 class="mt-12 md:mt-11 lg:mt-12 font-semibold text-2xl">Microsoft 365 for business</h1>
+                <p class="mt-2 lg:mt-8">
+                    Stay a step ahead with powerful apps for productivity, connection and security.
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#">Shop now<i
+                        class="f fa-solid fa-chevron-right "></i></a>
+
+            </div>
+            <div class="disc   lg:ml-4 mt-12 lg:mt-2 md:ml-6 ">
+                <img class="lg:h-40 lg:w-80 md:h-60 md:min-w-full" src="img/content8.avif" alt="">
+
+                <h1 class="mt-12 font-semibold text-2xl">Windows 11 for business is here</h1>
+                <p class="mt-2">
+                    Designed for hybrid work. Powerful for employees. Consistent for IT. Secure for all.
+                </p>
+                <a class="text-blue-600 block mt-4 font-semibold" href="#">Learn more <i
+                        class="f fa-solid fa-chevron-right "></i></a>
+
+            </div>
+           </div>
+        </div>
+
+        <h1 class="mt-16">Follow Microsoft <i class="cursor-pointer fa-xl fa-brands fa-facebook-f mx-2 ml-5"></i> <i
+                class="cursor-pointer fa-xl fa-brands fa-twitter mx-2"></i> <i
+                class="cursor-pointer fa-xl fa-brands fa-youtube mx-2"></i></h1>
+        <div class="text-center md:text-right mt-4">
+            <button
+                class="bg-gray-200 text-center min-w-full md:min-w-0 md:ml-auto md:p-2 p-2 font-semibold cursor-pointer hover:bg-white shadow-md transition-all"
+                onclick="scrollBack()"> <i class="fa-solid fa-arrow-up mr-1"></i> Back to top</button>
+        </div>
     </section>
-<Footer class="bg-gray-200 p-7 mt-12">
-<div class="sm:flex ">
-    <div class="font-light sm:my-4 sm:mx-11">
-        <h1 class="font-semibold">What's new</h1>
-        <li class="text-xs my-3 list-none">Microsoft 365</li>
-        <li class="text-xs my-3 list-none">Surface Pro X</li>
-        <li class="text-xs my-3 list-none">Surface Pro 7</li>
-        <li class="text-xs my-3 list-none">Surface Laptop 3</li>
-        <li class="text-xs my-3 list-none">Windows 11 apps</li>
-    </div>
-    <div class="font-light my-10 sm:my-4 sm:mx-11 ">
-        <h1 class="font-semibold">Microsoft Store</h1>
-        <li class="text-xs my-3 list-none">Account profile</li>
-        <li class="text-xs my-3 list-none">Download Center </li>
-        <li class="text-xs my-3 list-none">Microsoft Store Support</li>
-        <li class="text-xs my-3 list-none">Returns</li>
-        <li class="text-xs my-3 list-none">Order tracking</li>
-    </div>
-    <div class="font-light my-10 sm:my-4 sm:mx-11">
-        <h1 class="font-semibold">Education</h1>
-        <li class="text-xs my-3 list-none">Microsoft in education</li>
-        <li class="text-xs my-3 list-none">Devices for education X</li>
-        <li class="text-xs my-3 list-none">Microsoft Teams for Education</li>
-        <li class="text-xs my-3 list-none">Office Education</li>
-        <li class="text-xs my-3 list-none">Educator training and development</li>
-        <li class="text-xs my-3 list-none">Deals for students and parents</li>
-        <li class="text-xs my-3 list-none">Azure for students</li>
-    </div>
-    <div class="font-light my-10 sm:my-4 sm:mx-11">
-        <h1 class="font-semibold">Business</h1>
-        <li class="text-xs my-3 list-none">Microsoft Cloud</li>
-        <li class="text-xs my-3 list-none">Microsoft Security</li>
-        <li class="text-xs my-3 list-none">Azure</li>
-        <li class="text-xs my-3 list-none">Dynamics 365</li>
-        <li class="text-xs my-3 list-none">Microsoft 365</li>
-        <li class="text-xs my-3 list-none">Microsoft Advertising</li>
-        <li class="text-xs my-3 list-none">Microsoft Industry</li>
-        <li class="text-xs my-3 list-none">Microsoft Teams</li>
-    </div>
-    <div class="font-light my-10 sm:my-4 sm:mx-11">
-        <h1 class="font-semibold">Developer & ITs</h1>
-        <li class="text-xs my-3 list-none">Developer Center</li>
-        <li class="text-xs my-3 list-none">Documentation</li>
-        <li class="text-xs my-3 list-none">Microsoft Learn</li>
-        <li class="text-xs my-3 list-none">Microsoft Tech Community</li>
-        <li class="text-xs my-3 list-none">Azure Marketplace</li>
-        <li class="text-xs my-3 list-none">AppSource</li>
-        <li class="text-xs my-3 list-none">Microsoft Power Platform</li>
-        <li class="text-xs my-3 list-none">Visual Studio</li>
-    </div>
-    <div class="font-light my-10 sm:my-4 sm:mx-11">
-        <h1 class="font-semibold">Company</h1>
-        <li class="text-xs my-3 list-none">Careers</li>
-        <li class="text-xs my-3 list-none">About Microsoft</li>
-        <li class="text-xs my-3 list-none">Company news</li>
-        <li class="text-xs my-3 list-none">Privacy at Microsoft</li>
-        <li class="text-xs my-3 list-none">Investors</li>
-        <li class="text-xs my-3 list-none">Security</li>
-        <li class="text-xs my-3 list-none">Sustainability</li>
-        <li class="text-xs my-3 list-none">Microsoft Teams</li>
-    </div>
-</div>
-<div class="sm:flex">
-<div class="flex sm:mx-11">
-    <i class="fa-solid fa-earth-americas"></i> <a class="text-xs mx-3 font-light" href="#">English(India)</a>
-</div>
-<div class="flex text-xs font-light list-none flex-wrap mt-3 sm:mt-0 ml-auto">
-    <li class="mx-3 sm:mx-4 ml-0 my-1">Contact Microsoft</li>
-    <li class="mx-3 sm:mx-4 ml-0 my-1">Privacy</li>
-    <li class="mx-3 sm:mx-4 ml-0 my-1">Term of use</li>
-    <li class="mx-3 sm:mx-4 ml-0 my-1">Trademarks</li>
-    <li class="mx-3 sm:mx-4 ml-0 my-1">About our ads</li>
-    <li class="mx-3 sm:mx-4 ml-0 my-1">&copy; Microsoft 2022</li>
-</div>
-</div>
-</Footer>
+    <Footer class="bg-gray-200 p-7 mt-12">
+        <div class="lg:flex ">
+           
+          <div class="md:flex">  
+            <div class="font-light  md:w-56 lg:w-fit lg:my-4 lg:mx-11">
+                <h1 class="font-semibold">What's new</h1>
+                <li class="text-xs my-3 list-none">Microsoft 365</li>
+                <li class="text-xs my-3 list-none">Surface Pro X</li>
+                <li class="text-xs my-3 list-none">Surface Pro 7</li>
+                <li class="text-xs my-3 list-none">Surface Laptop 3</li>
+                <li class="text-xs my-3 list-none">Windows 11 apps</li>
+            </div>
+            <div class="font-light md:my-0  md:w-56 lg:w-fit before: md:mx-auto my-10 lg:my-4 lg:mx-11 ">
+                <h1 class="font-semibold">Microsoft Store</h1>
+                <li class="text-xs my-3 list-none">Account profile</li>
+                <li class="text-xs my-3 list-none">Download Center </li>
+                <li class="text-xs my-3 list-none">Microsoft Store Support</li>
+                <li class="text-xs my-3 list-none">Returns</li>
+                <li class="text-xs my-3 list-none">Order tracking</li>
+            </div>
+            <div class="font-light md:my-0  md:w-56 lg:w-fit my-10 lg:my-4  lg:mx-11">
+                <h1 class="font-semibold">Education</h1>
+                <li class="text-xs my-3 list-none">Microsoft in education</li>
+                <li class="text-xs my-3 list-none">Devices for education X</li>
+                <li class="text-xs my-3 list-none">Microsoft Teams for Education</li>
+                <li class="text-xs my-3 list-none">Office Education</li>
+                <li class="text-xs my-3 list-none">Educator training and development</li>
+                <li class="text-xs my-3 list-none">Deals for students and parents</li>
+                <li class="text-xs my-3 list-none">Azure for students</li>
+            </div>
+          </div>
+
+          <div class="md:flex">
+            <div class="font-light md:my-0 my-10 md:w-56 lg:w-fit lg:my-4 md:mt-8 lg:mx-11">
+                <h1 class="font-semibold">Business</h1>
+                <li class="text-xs my-3 list-none">Microsoft Cloud</li>
+                <li class="text-xs my-3 list-none">Microsoft Security</li>
+                <li class="text-xs my-3 list-none">Azure</li>
+                <li class="text-xs my-3 list-none">Dynamics 365</li>
+                <li class="text-xs my-3 list-none">Microsoft 365</li>
+                <li class="text-xs my-3 list-none">Microsoft Advertising</li>
+                <li class="text-xs my-3 list-none">Microsoft Industry</li>
+                <li class="text-xs my-3 list-none">Microsoft Teams</li>
+            </div>
+            <div class="font-light md:my-0  md:w-56 lg:w-fit my-10 md:mx-auto md:mt-8 lg:my-4 lg:mx-11">
+                <h1 class="font-semibold">Developer & ITs</h1>
+                <li class="text-xs my-3 list-none">Developer Center</li>
+                <li class="text-xs my-3 list-none">Documentation</li>
+                <li class="text-xs my-3 list-none">Microsoft Learn</li>
+                <li class="text-xs my-3 list-none">Microsoft Tech Community</li>
+                <li class="text-xs my-3 list-none">Azure Marketplace</li>
+                <li class="text-xs my-3 list-none">AppSource</li>
+                <li class="text-xs my-3 list-none">Microsoft Power Platform</li>
+                <li class="text-xs my-3 list-none">Visual Studio</li>
+            </div>
+            <div class="font-light md:my-0  md:w-56 lg:w-fit my-10 md:mt-8 lg:my-4 lg:mx-11 ">
+                <h1 class="font-semibold">Company</h1>
+                <li class="text-xs my-3 list-none">Careers</li>
+                <li class="text-xs my-3 list-none">About Microsoft</li>
+                <li class="text-xs my-3 list-none">Company news</li>
+                <li class="text-xs my-3 list-none">Privacy at Microsoft</li>
+                <li class="text-xs my-3 list-none">Investors</li>
+                <li class="text-xs my-3 list-none">Security</li>
+                <li class="text-xs my-3 list-none">Sustainability</li>
+                <li class="text-xs my-3 list-none">Microsoft Teams</li>
+            </div>
+          </div>
+
+        </div>
+        <div class="lg:flex">
+            <div class="flex lg:mx-11">
+                <i class="fa-solid fa-earth-americas"></i> <a class="text-xs mx-3 font-light"
+                    href="#">English(India)</a>
+            </div>
+            <div class="flex text-xs font-light list-none flex-wrap mt-3 lg:mt-0 ml-auto">
+                <li class="mx-3 lg:mx-4 ml-0 my-1">Contact Microsoft</li>
+                <li class="mx-3 lg:mx-4 ml-0 my-1">Privacy</li>
+                <li class="mx-3 lg:mx-4 ml-0 my-1">Term of use</li>
+                <li class="mx-3 lg:mx-4 ml-0 my-1">Trademarks</li>
+                <li class="mx-3 lg:mx-4 ml-0 my-1">About our ads</li>
+                <li class="mx-3 lg:mx-4 ml-0 my-1">&copy; Microsoft 2022</li>
+            </div>
+        </div>
+    </Footer>
     <script src="app.js"></script>
 
 </body>
